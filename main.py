@@ -59,6 +59,15 @@ def play_prev():
     listBox.select_set(next_song)
 
 
+def pause_song():
+    if pauseButton['text'] == 'Pause':
+        mixer.music.pause()
+        pauseButton['text'] = 'Play'
+    else:
+        mixer.music.unpause()
+        pauseButton['text'] = 'Pause'
+
+
 listBox = tk.Listbox(canvas, fg='cyan', bg="black", width=100, font=('Sonic 1 Title Screen Outline', 10))
 listBox.pack(padx=15, pady=15)
 
@@ -77,7 +86,7 @@ stopButton.pack(pady=15, in_=top, side='left')
 playButton = tk.Button(canvas, text='Play', image=play_img, bg='black', borderwidth=0, command=select)
 playButton.pack(pady=15, in_=top, side='left')
 
-pauseButton = tk.Button(canvas, text='Pause', image=pause_img, bg='black', borderwidth=0)
+pauseButton = tk.Button(canvas, text='Pause', image=pause_img, bg='black', borderwidth=0, command=pause_song)
 pauseButton.pack(pady=15, in_=top, side='left')
 
 nextButton = tk.Button(canvas, text='Next', image=next_img, bg='black', borderwidth=0, command=play_next)
