@@ -11,6 +11,8 @@ canvas.config(bg='black')
 rootpath = "C:\\Users\\Константин\\Desktop\\music"
 pattern = "*.mp3"
 
+mixer.init()
+
 prev_img = tk.PhotoImage(file="prev.png")
 next_img = tk.PhotoImage(file="next.png")
 pause_img = tk.PhotoImage(file="pause.png")
@@ -22,6 +24,11 @@ def select():
     label.config(text=listBox.get("anchor"))
     mixer.music.load(rootpath + "\\" + listBox.get("anchor"))
     mixer.music.play()
+
+
+def stop():
+    mixer.music.stop()
+    listBox.select_clear('active')
 
 
 listBox = tk.Listbox(canvas, fg='cyan', bg="black", width=100, font=('Sonic 1 Title Screen Outline', 10))
@@ -36,7 +43,7 @@ top.pack(padx=10, pady=5, anchor='center')
 prevButton = tk.Button(canvas, text='Prev', image=prev_img, bg='black', borderwidth=0)
 prevButton.pack(pady=15, in_=top, side='left')
 
-stopButton = tk.Button(canvas, text='Stop', image=stop_img, bg='black', borderwidth=0)
+stopButton = tk.Button(canvas, text='Stop', image=stop_img, bg='black', borderwidth=0, command=stop)
 stopButton.pack(pady=15, in_=top, side='left')
 
 playButton = tk.Button(canvas, text='Play', image=play_img, bg='black', borderwidth=0, command=select)
