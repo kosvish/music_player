@@ -27,11 +27,20 @@ label.pack(pady=15)
 top = tk.Frame(canvas, bg='black')
 top.pack(padx=10, pady=5, anchor='center')
 
-prevButton = tk.Button(canvas, text='Prev')
+prevButton = tk.Button(canvas, text='Prev', image=prev_img, bg='black', borderwidth=0)
 prevButton.pack(pady=15, in_=top, side='left')
 
-stopButton = tk.Button(canvas, text='Stop')
+stopButton = tk.Button(canvas, text='Stop', image=stop_img, bg='black', borderwidth=0)
 stopButton.pack(pady=15, in_=top, side='left')
+
+playButton = tk.Button(canvas, text='Play', image=play_img, bg='black', borderwidth=0)
+playButton.pack(pady=15, in_=top, side='left')
+
+pauseButton = tk.Button(canvas, text='Pause', image=pause_img, bg='black', borderwidth=0)
+pauseButton.pack(pady=15, in_=top, side='left')
+
+nextButton = tk.Button(canvas, text='Next', image=next_img, bg='black', borderwidth=0)
+nextButton.pack(pady=15, in_=top, side='left')
 
 
 
