@@ -11,6 +11,13 @@ canvas.config(bg='black')
 rootpath = "C:\\Users\\Константин\\Desktop\\music"
 pattern = "*.mp3"
 
+prev_img = tk.PhotoImage(file="prev.png")
+next_img = tk.PhotoImage(file="next.png")
+pause_img = tk.PhotoImage(file="pause.png")
+play_img = tk.PhotoImage(file="play.png")
+stop_img = tk.PhotoImage(file="stop.png")
+
+
 listBox = tk.Listbox(canvas, fg='cyan', bg="black", width=100, font=('Sonic 1 Title Screen Outline', 10))
 listBox.pack(padx=15, pady=15)
 
@@ -25,6 +32,7 @@ prevButton.pack(pady=15, in_=top, side='left')
 
 stopButton = tk.Button(canvas, text='Stop')
 stopButton.pack(pady=15, in_=top, side='left')
+
 
 
 
