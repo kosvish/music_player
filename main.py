@@ -17,11 +17,16 @@ listBox.pack(padx=15, pady=15)
 label = tk.Label(canvas, text='', bg='black', fg='yellow', font=('Sonic 1 Title Screen Outline', 18))
 label.pack(pady=15)
 
+top = tk.Frame(canvas, bg='black')
+top.pack(padx=10, pady=5, anchor='center')
+
 prevButton = tk.Button(canvas, text='Prev')
-prevButton.pack(pady=15)
+prevButton.pack(pady=15, in_=top, side='left')
 
 stopButton = tk.Button(canvas, text='Stop')
-stopButton.pack(pady=15)
+stopButton.pack(pady=15, in_=top, side='left')
+
+
 
 
 for root, dirs, files in os.walk(rootpath):
