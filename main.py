@@ -68,6 +68,22 @@ def pause_song():
         pauseButton['text'] = 'Pause'
 
 
+def quarter_volume():
+    mixer.music.set_volume(0.25)
+
+
+def half_volume():
+    mixer.music.set_volume(0.5)
+
+
+def third_volume():
+    mixer.music.set_volume(0.75)
+
+
+def all_volume():
+    mixer.music.set_volume(0.1)
+
+
 listBox = tk.Listbox(canvas, fg='cyan', bg="black", width=100, font=('Sonic 1 Title Screen Outline', 10))
 listBox.pack(padx=15, pady=15)
 
@@ -91,6 +107,18 @@ pauseButton.pack(pady=15, in_=top, side='left')
 
 nextButton = tk.Button(canvas, text='Next', image=next_img, bg='black', borderwidth=0, command=play_next)
 nextButton.pack(pady=15, in_=top, side='left')
+
+quartVolumeButton = tk.Button(canvas, text='25', bg='white', borderwidth=0, command=quarter_volume)
+quartVolumeButton.pack(pady=15, in_=top, side='left')
+
+halfVolumeButton = tk.Button(canvas, text='50', bg='white', borderwidth=0, command=half_volume)
+halfVolumeButton.pack(pady=15, in_=top, side='left')
+
+thirdVolumeButton = tk.Button(canvas, text='75', bg='white', borderwidth=0, command=third_volume)
+thirdVolumeButton.pack(pady=15, in_=top, side='left')
+
+allVolumeButton = tk.Button(canvas, text='100', bg='white', borderwidth=0, command=third_volume)
+allVolumeButton.pack(pady=15, in_=top, side='left')
 
 for root, dirs, files in os.walk(rootpath):
     for filename in fnmatch.filter(files, pattern):
